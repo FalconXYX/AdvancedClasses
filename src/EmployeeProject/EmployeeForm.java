@@ -1,14 +1,21 @@
-
 package EmployeeProject;
 
+import java.text.NumberFormat;
+import javax.swing.JOptionPane;
 
 public class EmployeeForm extends javax.swing.JFrame {
 
+    int size = 0;
+    NumberFormat nf;
+    Employee e[] = new Employee[10];
+
     public EmployeeForm() {
         initComponents();
+
+        nf = NumberFormat.getCurrencyInstance();
+
     }
 
-   
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -17,9 +24,9 @@ public class EmployeeForm extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
+        nametf = new javax.swing.JTextField();
+        hourstf = new javax.swing.JTextField();
+        ratetf = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
         jRadioButton1 = new javax.swing.JRadioButton();
         jRadioButton2 = new javax.swing.JRadioButton();
@@ -43,21 +50,21 @@ public class EmployeeForm extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jLabel3.setText("Hours: ");
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        nametf.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                nametfActionPerformed(evt);
             }
         });
 
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        hourstf.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                hourstfActionPerformed(evt);
             }
         });
 
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+        ratetf.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
+                ratetfActionPerformed(evt);
             }
         });
 
@@ -170,15 +177,15 @@ public class EmployeeForm extends javax.swing.JFrame {
                                 .addGroup(layout.createSequentialGroup()
                                     .addComponent(jLabel3)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(hourstf, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGroup(layout.createSequentialGroup()
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(jLabel1)
                                         .addComponent(jLabel2))
                                     .addGap(18, 18, 18)
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                        .addComponent(nametf, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(ratetf, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))))
                             .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(104, 104, 104)
@@ -197,15 +204,15 @@ public class EmployeeForm extends javax.swing.JFrame {
                 .addGap(15, 15, 15)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(nametf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(ratetf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(hourstf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -220,33 +227,74 @@ public class EmployeeForm extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void nametfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nametfActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_nametfActionPerformed
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void hourstfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hourstfActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_hourstfActionPerformed
 
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+    private void ratetfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ratetfActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
+    }//GEN-LAST:event_ratetfActionPerformed
 
     private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jRadioButton2ActionPerformed
 
     private void okbActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okbActionPerformed
-        String choice;
-        //try{
-            choice = buttonGroup1.getSelection().getActionCommand();
-            
-        
-       // }
-    }//GEN-LAST:event_okbActionPerformed
+        String choice, n;
+        double rate;
+        int hours;
+        Employee temp;
 
+        try {
+            n = nametf.getText();
+            rate = Double.parseDouble(ratetf.getText());
+            hours = Integer.parseInt(hourstf.getText());
+            choice = buttonGroup1.getSelection().getActionCommand();
+            System.out.println(choice);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Please Fill Form Out");
+            return;
+        }
+        if (choice == "pt") {
+            temp = new PTEmployee();
+
+        } else {
+            temp = new FTEmployee();
+
+        }
+        if (temp.setName(n) && temp.setHours(hours) && temp.setRate(rate)) {
+            e[size] = temp;
+            table.setValueAt(temp.getName(), size, 0);
+            table.setValueAt(nf.format(temp.getPay()), size, 1);
+            size++;
+            totalpaylbl.setText("Total Pay: "+nf.format(Employee.getTotalpay()));
+            clearform();
+            return; //leave now 
+        } else {
+            String error = "ERROR\n\n";
+            if (temp.setName(n)==false) {error += "Name: " + Employee.getNameRules() + "\n";}
+            if (temp.setHours(hours)==false){ error += "Hours: " + Employee.getHoursRules() + "\n";}
+            if (temp.setRate(rate)==false){ error += "Rate: " + Employee.getRateRules();}
+            JOptionPane.showMessageDialog(this, error); 
+
+            
+            
+        }
+
+
+    }//GEN-LAST:event_okbActionPerformed
+    public void clearform(){
+        nametf.setText("");
+        ratetf.setText("");
+        hourstf.setText("");
+    
+    }
     private void quitbActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quitbActionPerformed
-        // TODO add your handling code here:
+        System.exit(0);
     }//GEN-LAST:event_quitbActionPerformed
 
     /**
@@ -287,6 +335,7 @@ public class EmployeeForm extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JLabel finalpaylbl;
+    private javax.swing.JTextField hourstf;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -296,11 +345,10 @@ public class EmployeeForm extends javax.swing.JFrame {
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField nametf;
     private javax.swing.JButton okb;
     private javax.swing.JButton quitb;
+    private javax.swing.JTextField ratetf;
     private javax.swing.JTable table;
     private javax.swing.JLabel totalpaylbl;
     // End of variables declaration//GEN-END:variables

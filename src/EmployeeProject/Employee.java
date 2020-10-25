@@ -62,7 +62,7 @@ abstract public class Employee {
             return true;
         }
     }
-    final public double getTotalpay() {
+    final static public double getTotalpay() {
         return totalpay;
     
     }

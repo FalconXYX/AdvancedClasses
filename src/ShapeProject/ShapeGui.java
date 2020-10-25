@@ -196,7 +196,10 @@ public class ShapeGui extends javax.swing.JFrame {
     }//GEN-LAST:event_circlebActionPerformed
 
     private void trianglebActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_trianglebActionPerformed
-        // TODO add your handling code here:
+        erase();
+        s = new triangle(0, 0, 66,66,156,16);
+        s.draw(p);
+        infotext.setText(s.toString());
     }//GEN-LAST:event_trianglebActionPerformed
 
     private void quitbActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quitbActionPerformed
