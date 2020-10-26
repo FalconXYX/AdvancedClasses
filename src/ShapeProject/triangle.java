@@ -8,11 +8,11 @@ import TurtleGraphics.Pen;
  * @author Parth
  */
 public class triangle extends Shape {
-    double l;
+    
     double x2, y2, x3, y3;
     public triangle() {
         super();
-        l = 10;
+     
 
     }
 
@@ -40,8 +40,8 @@ public class triangle extends Shape {
     @Override
     public void move(double xpos, double ypos) {
         double changex, changey;
-        changex = x-xpos;
-        changey = y-ypos;
+        changex = xpos-x;
+        changey = ypos-y;
         
         x = xpos;
         y = ypos;
